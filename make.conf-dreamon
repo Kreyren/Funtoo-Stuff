@@ -1,0 +1,191 @@
+COMMON_FLAGS="-02 =march=sandybridge -pipe"
+CFLAGS=${COMMON_FLAGS}
+CXXFLAGS=${COMMON_FLAGS}
+FCLAGS=${COMMON_FLAGS}
+FFLAGS=${COMMON_FLAGS}
+LDFLAGS="-Wl,-O1 -Wl,--sort-common -Wl,--as-needed"
+
+CHOST="x86_64-pc-linux-gnu"
+
+CBUILD="x86_64-pc-linux-gnu" # ???
+
+MAKEOPTS="-j8"
+
+VIDEO_CARDS="amdgpu radeonsi"
+
+# USE="X alsa pulseaudio vulkan xinerama ipv6 threads ssl"
+
+ABI_X86="32 64"
+
+ACCEPT_LICENSE="* -@EULA Oracle-BCLA-JavaSE"
+
+ACCEPT_KEYWORDS="amd64 ~amd64"
+
+# PORTDIR=/usr/portage
+# PORTAGE_TMPDIR=/var/tmp
+
+EMERGE_DEFAULT_OPTS="--jobs --autounmask-write --verbose-conflicts"
+
+PORTAGE_NICENESS="19"
+
+# GENTOO_MIRRORS="rsync://mirror.dkm.cz/gentoo/ rsync://ftp.fi.muni.cz/pub/linux/gentoo/"
+GENTOO_MIRRORS="https://fastpull-us.funtoo.org" # Default
+
+CONFIG_PROTECT="/etc /usr/share/gnupg/qualified.txt"
+
+CONFIG_PROTECT_MASK="/etc/ca-certificates.conf /etc/env.d /etc/gconf /etc/gentoo-release /etc/revdep-rebuild /etc/sandbox.d /etc/terminfo"
+
+DISTDIR="/var/cache/portage/distfiles"
+
+FEATURES="assume-digests binpkg-logs config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict news parallel-fetch preserve-libs protect-owned sandbox sfperms strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr"
+
+LANG="en_US.utf8"
+
+PKGDIR="/var/cache/portage/packages"
+
+PORTAGE_CONFIGROOT="/"
+
+PORTAGE_TMPDIR="/var/tmp"
+
+CPU_FLAGS_X86="aes avx mmx mmxext pclmul popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3"
+
+USE="-${USE_DISABLED} ${CPU_FLAGS_X86} X acl alsa amd64 consolekit cracklib crypt curl cxx dbus dri dts elogind exif ffmpeg gdbm gif gpm gstreamer hardened icu ipv6 modules ncurses nls nptl opengl openmp pam pax_kernel pcre postproc ssl tcpd truetype udev unicode urandom xattr zeroconf zlib" 
+# What is acl?
+# what is amd64? https://packages.gentoo.org/useflags/amd64 != Gentoo
+# elogind needed?
+# exif needed?
+# ffmpeg needed?
+# gdbm needed?
+# gpm needed? Console based mouse driver
+# gstreamer needed?
+# ncurses needed?
+# nls needed?
+# nptl needed?
+# openmp needed?
+# pam needed?
+# Funtoo has pax_kernel? 
+# pcre needed?
+# postproc needed?
+# tcpd needed?
+# truetype required by some WINE apps
+# xattr needed?
+# zeroconf needed?
+
+USE_DISABLED="aac a52 apng berkdb bzip2 cdda cdio cdr cups dnssd dvd dvdr dvdread encode faac faad flac ico ieee1394 ios ipod jpeg jpeg2k lame libass libguess libmpeg2 mad matroska mjpeg mp3 mpeg mtp mudflap nsplugin ogg pdf png pic pppd python quicktime readline resolvconf sndfile svg taglib theora tiff twolame v4l vorbis vpx wav wavpack webp win32codecs wmf x264 x265 xml xtpax xvid"
+# aac - Codec for DVD
+# a52 - Codec for DVD
+# apng - Animated png unofficial, seems cool
+# berkdb - Support for sys-libs/db Berkeley DB fo MYSQL
+# bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray, not needed
+# bzip2 - Use the bzlib compression library
+# cdda - Add Compact Disk Digital Audio (Standard Audio CD) support, not needed
+# cddb - Access cddb servers to retrieve and submit information about compact disks, Needed?
+# cdio - Enable audio CD grabbing with dev-libs/libcdio || dev-libs/libcdio-paranoia, not needed
+# cdr - Add support for CD writer hardware, not needed
+# cups - Add support for CUPS (Common Unix Printing System), not needed
+# dnssd - NOT FOUND BY GENTOO
+# dvd - Suport for DVD, not needed
+# dvdr - Add support for DVD writer hardware (e.g. in xcdroast)
+# dvdread - NOT FOUND BY GENTOO
+# encode - Add support for encoding of audio or video files, needed?
+# faac - Use external faac library for AAC encoding
+# faad - Use external faad library for AAC decoding
+# flac - Add support for FLAC: Free Lossless Audio Codec
+# ico - Enable Ico image loader, limited usage
+# iconv - Enable support for the iconv character set conversion library
+# ieee1394 - Enable FireWire/iLink IEEE1394 support (dv, camera, ...)
+# ios - Enable support for Apple's iDevicces.. HELL NO
+# ipod - Enable support for iPod device access.. HELL NO
+# jpeg - jpeg support
+# jpeg2k - jpeg2k support
+# lame - Prefer using LAME libraries for MP3 encoding support
+# libass - SRT/SSA/ASS (SubRip / SubStation Alpha) subtitle support
+# libguess - NOT FOUND BY GENTOO
+# libmpeg2 - Build support for mpeg2 over media-libs/libmpeg2 rather than using ffmpeg.
+# mad - Add support for mad (high-quality mp3 decoder library and cli frontend)
+# matroska - Add support for the matroska container format (extensions .mkv, .mka and .mks)
+# mjpeg - Enables mjpegtools support
+# mp3 - mp3
+# mpeg - mpeg
+# mtp - Enable support for Media Transfer Protocol
+# mudflap - Add support for mudflap, a pointer use checking library
+# nsplugin - might be needed 
+# ogg - ogg
+# pdf - pdf
+# pic - Force shared libraries to be built as PIC? Needed?
+# png - png
+# pppd - NOT FOUND BY GENTOO
+# python - Use as local use
+# quicktime - Add support for OpenQuickTime
+# readline - Enable support for libreadline, a GNU line-editing library that almost everyone wants? Needed?
+# resolvconf - Needed?
+# sndfile - Add support for libsndfile
+# svg - svg
+# taglib - Enable tagging support with taglib
+# theora - Add support for the Theora Video Compression Codec
+# tiff - Add support for the TIFF image format
+# twolame - Enables twolame support (MPEG Audio Layer 2 encoder)
+# v4l - Enable support for video4linux (using linux-headers or userspace libv4l libraries)
+# vorbis - Add support for the OggVorbis audio codec
+# vpx - Enable support for media-libs/libvpx
+# wav - support WAVE files
+# wavpack - Add support for wavpack audio compression tools
+# webp - Add support for the WebP image format
+# win32codecs - NOT FOUND BY GENTOO
+# wmf - Add support for the Windows Metafile vector image format
+# x264 x265 - Encoding
+# xml - Enable XML import support
+# xtpax - Enable XATTR_PAX_FLAGS support, needed? 
+# xvid - Add support for xvid.org's open-source mpeg-4 codec
+
+
+
+
+ABI_X86="64" 
+
+ALSA_CARDS="ali5451 als4000 atiixp atiixp-modem bt87x ca0106 cmipci emu10k1x ens1370 ens1371 es1938 es1968 fm801 hda-intel ice1724 intel8x0 intel8x0m maestro3 trident usb-audio via82xx via82xx-modem ymfpci" 
+
+ALSA_PCM_PLUGINS="adpcm alaw asym copy dmix dshare dsnoop empty extplug file hooks iec958 ioplug ladspa lfloat linear meter mmap_emul mulaw multi null plug rate route share shm softvol" 
+
+APACHE2_MODULES="actions alias auth_basic authn_alias authn_anon authn_dbm authn_default authn_file authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cgi cgid dav dav_fs dav_lock deflate dir disk_cache env expires ext_filter file_cache filter headers include info log_config logio mem_cache mime mime_magic negotiation rewrite setenvif speling status unique_id userdir usertrack vhost_alias authn_core authz_core socache_shmcb unixd" 
+
+CALLIGRA_FEATURES="kexi words flow plan sheets stage tables krita karbon braindump author" 
+
+COLLECTD_PLUGINS="df interface irq load memory rrdtool swap syslog" 
+
+ELIBC="glibc" 
+
+GPSD_PROTOCOLS="ashtech aivdm earthmate evermore fv18 garmin garmintxt gpsclock isync itrax mtk3301 nmea ntrip navcom oceanserver oldstyle oncore rtcm104v2 rtcm104v3 sirf skytraq superstar2 timing tsip tripmate tnt ublox ubx" 
+
+GRUB_PLATFORMS="efi-64 pc" 
+
+INPUT_DEVICES="evdev synaptics keyboard mouse" 
+
+KERNEL="linux" 
+
+LCD_DEVICES="bayrad cfontz cfontz633 glk hd44780 lb216 lcdm001 mtxorb ncurses text" 
+
+LIBREOFFICE_EXTENSIONS="presenter-console presenter-minimizer" 
+
+OFFICE_IMPLEMENTATION="libreoffice" PHP_TARGETS="php7-2" 
+
+POSTGRES_TARGETS="postgres9_5" PYTHON_SINGLE_TARGET="python3_6" 
+
+PYTHON_TARGETS="python3_6 python2_7" 
+
+QEMU_SOFTMMU_TARGETS="i386 x86_64" 
+
+QEMU_USER_TARGETS="i386 x86_64" 
+
+RUBY_TARGETS="ruby23 ruby24" 
+
+USERLAND="GNU" 
+
+XTABLES_ADDONS="quota2 psd pknock lscan length2 ipv4options ipset ipp2p iface geoip fuzzy condition tee tarpit sysrq steal rawnat logmark ipmark dhcpmac delude chaos account"
+
+Unset:  CPPFLAGS, CTARGET, EMERGE_DEFAULT_OPTS, ENV_UNSET, INSTALL_MASK, LC_ALL, LINGUAS, PORTAGE_BINHOST, PORTAGE_BUNZIP2_COMMAND, PORTAGE_COMPRESS, PORTAGE_COMPRESS_FLAGS
+
+# Unset: MAKEOPTS # Be default
+# MAKEOPTS is disabled because portage handles them automatically as cores +1?
+
+MAKEOPTS="-j8" # Worked for me.. needs testing
