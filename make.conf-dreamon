@@ -73,7 +73,7 @@ USE="${USE_DISABLED} ${CPU_FLAGS_X86} X acl alsa amd64 consolekit cracklib crypt
 # xattr needed?
 # zeroconf needed?
 
-USE_DISABLED="-aac -a52 -apng -berkdb -bzip2 -cdda -cdio -cdr -cups -dnssd -dvd -dvdr -dvdread -encode -faac -faad -flac -ico -ieee1394 -ios -ipod -jpeg -jpeg2k -lame -libass -libguess -libmpeg2 -mad -matroska -mjpeg -mp3 -mpeg -mtp -mudflap -nsplugin -ogg -pdf -png -pic -pppd -python -quicktime -readline -resolvconf -sndfile -svg -taglib -theora -tiff -twolame -v4l -vorbis -vpx -wav -wavpack -webp -win32codecs -wmf -x264 -x265 -xml -xtpax -xvid -pax_kernel"
+USE_DISABLED="-aac -a52 -apng -berkdb -bzip2 -cdda -cdio -cdr -cups -dnssd -dvd -dvdr -dvdread -encode -faac -faad -flac -ico -ieee1394 -ios -ipod -jpeg -jpeg2k -lame -libass -libguess -libmpeg2 -mad -matroska -mjpeg -mp3 -mpeg -mtp -mudflap -nsplugin -ogg -pdf -png -pic -pppd -python -quicktime -readline -resolvconf -sndfile -svg -taglib -theora -tiff -twolame -v4l -vorbis -vpx -wav -wavpack -webp -win32codecs -wmf -x264 -x265 -xml -xtpax -xvid -pax_kernel -wayland"
 # aac - Codec for DVD
 # a52 - Codec for DVD
 # apng - Animated png unofficial, seems cool
@@ -139,10 +139,11 @@ USE_DISABLED="-aac -a52 -apng -berkdb -bzip2 -cdda -cdio -cdr -cups -dnssd -dvd 
 # xml - Enable XML import support
 # xtpax - Enable XATTR_PAX_FLAGS support, needed?
 # xvid - Add support for xvid.org's open-source mpeg-4 codec
-# pax_kernel - not included on funtoo?
+# pax_kernel - not included on funtoo? NOT-FREE?
+# -wayland, using X
 
 ALSA_CARDS=""
-#ALSA_CARDS="-ali5451 -als4000 -atiixp -atiixp-modem -bt87x -ca0106 -cmipci -emu10k1x -ens1370 -ens1371 -es1938 -es1968 -fm801 -hda-intel -ice1724 -intel8x0 -intel8x0m -maestro3 -trident -usb-audio -via82xx -via82xx-modem -ymfpci" 
+# ALSA_CARDS="-ali5451 -als4000 -atiixp -atiixp-modem -bt87x -ca0106 -cmipci -emu10k1x -ens1370 -ens1371 -es1938 -es1968 -fm801 -hda-intel -ice1724 -intel8x0 -intel8x0m -maestro3 -trident -usb-audio -via82xx -via82xx-modem -ymfpci" 
 ## Results in err
 
 ALSA_PCM_PLUGINS=""
