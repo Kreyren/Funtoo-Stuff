@@ -157,7 +157,9 @@ CALLIGRA_FEATURES=""
 #CALLIGRA_FEATURES="-kexi -words -flow -plan -sheets -stage -tables -krita -karbon -braindump -author"
 ## Results in err
 
-COLLECTD_PLUGINS="-df -interface -irq -load -memory -rrdtool -swap -syslog"
+COLLECTD_PLUGINS=""
+#COLLECTD_PLUGINS="-df -interface -irq -load -memory -rrdtool -swap -syslog"
+## Results in err
 
 ELIBC="glibc"
 
@@ -167,7 +169,7 @@ GPSD_PROTOCOLS=""
 
 GRUB_PLATFORMS="efi-64 pc"
 
-INPUT_DEVICES="-evdev synaptics keyboard mouse"
+INPUT_DEVICES="evdev synaptics keyboard mouse"
 
 KERNEL="linux"
 
@@ -179,7 +181,9 @@ LIBREOFFICE_EXTENSIONS=""
 #LIBREOFFICE_EXTENSIONS="-presenter-console -presenter-minimizer"
 ## Results in err
 
-OFFICE_IMPLEMENTATION="-libreoffice"
+OFFICE_IMPLEMENTATION=""
+#OFFICE_IMPLEMENTATION="-libreoffice"
+## Results in err
 
 PHP_TARGETS="php7-2"
 
