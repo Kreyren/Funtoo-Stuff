@@ -32,13 +32,14 @@ PORTAGE_NICENESS="19"
 GENTOO_MIRRORS="https://fastpull-us.funtoo.org" # Default, can be changed on gentoo's?
 
 #CONFIG_PROTECT="/etc /usr/share/gnupg/qualified.txt"
+## No need to change
 
 #CONFIG_PROTECT_MASK="/etc/ca-certificates.conf /etc/env.d /etc/gconf /etc/gentoo-release /etc/revdep-rebuild /etc/sandbox.d /etc/terminfo"
+## No need to change
 
-#FEATURES="assume-digests binpkg-logs config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict news parallel-fetch preserve-libs protect-owned sandbox sfperms strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr"
-FEATURES="userpriv news"
+FEATURES="-assume-digests -binpkg-logs -config-protect-if-modified -distlocks -ebuild-locks -fixlafiles -merge-sync -multilib-strict news -parallel-fetch -preserve-libs -protect-owned -sandbox -sfperms -strict -unknown-features-warn -unmerge-logs -unmerge-orphans -userfetch userpriv -usersandbox -usersync -xattr"
 
-# LANG="en_US.utf8"
+LANG="en_US.utf8"
 
 # INSANE ON FUNTOO!
 ## PKGDIR="/var/cache/portage/packages"
@@ -140,40 +141,31 @@ USE_DISABLED="-aac -a52 -apng -berkdb -bzip2 -cdda -cdio -cdr -cups -dnssd -dvd 
 # xvid - Add support for xvid.org's open-source mpeg-4 codec
 # pax_kernel - not included on funtoo?
 
-# ALSA_CARDS="ali5451 als4000 atiixp atiixp-modem bt87x ca0106 cmipci emu10k1x ens1370 ens1371 es1938 es1968 fm801 hda-intel ice1724 intel8x0 intel8x0m maestro3 trident usb-audio via82xx via82xx-modem ymfpci" 
-ALSA_CARDS=""
+ALSA_CARDS="-ali5451 -als4000 -atiixp -atiixp-modem -bt87x -ca0106 -cmipci -emu10k1x -ens1370 -ens1371 -es1938 -es1968 -fm801 -hda-intel -ice1724 -intel8x0 -intel8x0m -maestro3 -trident -usb-audio -via82xx -via82xx-modem -ymfpci" 
 
-#ALSA_PCM_PLUGINS="adpcm alaw asym copy dmix dshare dsnoop empty extplug file hooks iec958 ioplug ladspa lfloat linear meter mmap_emul mulaw multi null plug rate route share shm softvol" 
-ALSA_PCM_PLUGINS=""
+ALSA_PCM_PLUGINS="-adpcm -alaw -asym -copy -dmix -dshare -dsnoop -empty -extplug -file -hooks -iec958 -ioplug -ladspa -lfloat -linear -meter -mmap_emul -mulaw -multi -null -plug -rate -route -share -shm -softvol" 
 
-#APACHE2_MODULES="actions alias auth_basic authn_alias authn_anon authn_dbm authn_default authn_file authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cgi cgid dav dav_fs dav_lock deflate dir disk_cache env expires ext_filter file_cache filter headers include info log_config logio mem_cache mime mime_magic negotiation rewrite setenvif speling status unique_id userdir usertrack vhost_alias authn_core authz_core socache_shmcb unixd" 
-APACHE2_MODULES=""
+APACHE2_MODULES="-actions -alias -auth_basic -authn_alias -authn_anon -authn_dbm -authn_default -authn_file -authz_dbm -authz_default -authz_groupfile -authz_host -authz_owner -authz_user -autoindex -cache -cgi -cgid -dav -dav_fs -dav_lock -deflate -dir -disk_cache -env -expires -ext_filter -file_cache -filter -headers -include -info -log_config -logio -mem_cache -mime -mime_magic -negotiation -rewrite -setenvif -speling -status -unique_id -userdir -usertrack -vhost_alias -authn_core -authz_core -socache_shmcb -unixd" 
 
-#CALLIGRA_FEATURES="kexi words flow plan sheets stage tables krita karbon braindump author"
-CALLIGRA_FEATURES=""
+CALLIGRA_FEATURES="-kexi -words -flow -plan -sheets -stage -tables -krita -karbon -braindump -author"
 
-#COLLECTD_PLUGINS="df interface irq load memory rrdtool swap syslog"
-COLLECTD_PLUGINS=""
+COLLECTD_PLUGINS="-df -interface -irq -load -memory -rrdtool -swap -syslog"
 
 ELIBC="glibc"
 
-#GPSD_PROTOCOLS="ashtech aivdm earthmate evermore fv18 garmin garmintxt gpsclock isync itrax mtk3301 nmea ntrip navcom oceanserver oldstyle oncore rtcm104v2 rtcm104v3 sirf skytraq superstar2 timing tsip tripmate tnt ublox ubx" 
-GPSD_PROTOCOLS=""
+GPSD_PROTOCOLS="-ashtech -aivdm -earthmate -evermore -fv18 -garmin -garmintxt -gpsclock -isync -itrax -mtk3301 -nmea -ntrip -navcom -oceanserver -oldstyle -oncore -rtcm104v2 -rtcm104v3 -sirf -skytraq -superstar2 -timing -tsip -tripmate -tnt -ublox -ubx" 
 
 GRUB_PLATFORMS="efi-64 pc"
 
-INPUT_DEVICES="evdev synaptics keyboard mouse"
+INPUT_DEVICES="-evdev synaptics keyboard mouse"
 
 KERNEL="linux"
 
-#LCD_DEVICES="bayrad cfontz cfontz633 glk hd44780 lb216 lcdm001 mtxorb ncurses text"
-LCD_DEVICES=""
+LCD_DEVICES="-bayrad -cfontz -cfontz633 -glk -hd44780 -lb216 -lcdm001 -mtxorb -ncurses -text"
 
-#LIBREOFFICE_EXTENSIONS="presenter-console presenter-minimizer"
-LIBREOFFICE_EXTENSIONS=""
+LIBREOFFICE_EXTENSIONS="-presenter-console -presenter-minimizer"
 
-# OFFICE_IMPLEMENTATION="libreoffice"
-OFFICE_IMPLEMENTATION=""
+OFFICE_IMPLEMENTATION="-libreoffice"
 
 PHP_TARGETS="php7-2"
 
@@ -191,8 +183,7 @@ RUBY_TARGETS="ruby23 ruby24"
 
 USERLAND="GNU"
 
-#XTABLES_ADDONS="quota2 psd pknock lscan length2 ipv4options ipset ipp2p iface geoip fuzzy condition tee tarpit sysrq steal rawnat logmark ipmark dhcpmac delude chaos account"
-XTABLES_ADDONS=""
+XTABLES_ADDONS="-quota2 -psd -pknock -lscan -length2 -ipv4options -ipset -ipp2p -iface -geoip -fuzzy -condition -tee -tarpit -sysrq -steal -rawnat -logmark -ipmark -dhcpmac -delude -chaos -account"
 
 CPPFLAGS=""
 CTARGET=""
